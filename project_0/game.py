@@ -5,7 +5,7 @@
 import numpy as np
 
 
-def random_predict(number: int=1) -> int:
+def median_guessing(number: int=1) -> int:
     """Медианно угадываем число
 
     Args:
@@ -34,11 +34,11 @@ def random_predict(number: int=1) -> int:
     return count
 
 
-def score_game(random_predict) -> int:
+def score_game(median_guessing) -> int:
     """За какое количство попыток в среднем за 1000 подходов угадывает наш алгоритм
 
     Args:
-        random_predict ([type]): функция угадывания
+        median_guessing([type]): функция угадывания
 
     Returns:
         int: среднее количество попыток
@@ -48,7 +48,7 @@ def score_game(random_predict) -> int:
     random_array = np.random.randint(1, 101, size=(1000))  # Загадали список чисел
 
     for number in random_array:
-        count_ls.append(random_predict(number))
+        count_ls.append(median_guessing(number))
 
     score = int(np.mean(count_ls))
     print(f"Ваш алгоритм угадывает число в среднем за:{score} попыток")
@@ -57,4 +57,4 @@ def score_game(random_predict) -> int:
 
 if __name__ == "__main__":
     # RUN
-    score_game(random_predict)
+    score_game(median_guessing)
