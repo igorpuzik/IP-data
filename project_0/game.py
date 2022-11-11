@@ -9,7 +9,7 @@ def median_guessing(number: int=1) -> int:
     """Медианно угадываем число
 
     Args:
-        number (int, optional): _description_. Defaults to np.random.randin(1, 101).
+        number (int, optional): _description_. Defaults to 1.
 
     Returns:
         int: _description_
